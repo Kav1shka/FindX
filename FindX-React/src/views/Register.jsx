@@ -10,7 +10,7 @@ import axios from "axios";
   //     navigate('/user/login');
   //   };
   const [formData, setFormData] = useState({
-    userType : 2,
+    userType : 0,
   });
 
   const handleChange = (e) => {
@@ -30,7 +30,7 @@ import axios from "axios";
       // localStorage.setItem("userId", JSON.stringify(res.data.donorId));
       setTimeout(() => {
         navigate("/user/login");
-      }, 200);
+      }, 400);
     })
     .catch((err) => {
       console.log(err);
@@ -38,8 +38,7 @@ import axios from "axios";
         position: "bottom-right",
       });
     })
-    .finally(() => {
-    });
+   
   }
     return (
       <>
@@ -52,7 +51,7 @@ import axios from "axios";
               className="mx-auto h-10 w-auto"
             />
             <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-              Sign up to your account
+              Sign up to your findX account
             </h2>
           </div>
   
