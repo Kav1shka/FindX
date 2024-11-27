@@ -19,6 +19,10 @@ export default function Home() {
   const goToRegister = () => {
     navigate('/user/register');
   };
+
+  const gotoLogin = () => {
+    navigate('/user/login');
+  };
   
   const UserToggle = () => {
     const [userType, setUserType] = useState(1);// 1 for Buyer, 2 for Seller
@@ -61,9 +65,9 @@ export default function Home() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm/6 font-semibold text-gray-900">
+            <button className="text-sm/6 font-semibold text-gray-900" onClick={gotoLogin}>
               Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+            </button>
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -101,12 +105,12 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
+                  <button
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    onClick={gotoLogin}
                   >
                     Log in
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -146,13 +150,12 @@ export default function Home() {
               fugiat veniam occaecat.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
+              <button
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 onClick={goToRegister}
               >
                 Get started
-              </a>
+              </button>
         {/* <span className="text-lg font-medium">
         {userType === 1 ? "Buyer" : "Seller"} ({userType})
       </span>

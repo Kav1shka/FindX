@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
  function Register() {
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   //   const goToLogin = () => {
   //     navigate('/user/login');
   //   };
@@ -17,11 +17,11 @@ import axios from "axios";
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
   
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
     axios.post(`http://localhost:3000/User/UserSignup`, formData)
-    .then(res => {
+    .then((res) => {
       toast.success(res.data.message, {
         position: "bottom-right",
       });
@@ -32,12 +32,14 @@ import axios from "axios";
         navigate("/user/login");
       }, 200);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       toast.error(err.response?.data?.message || "An error occurred", {
         position: "bottom-right",
       });
     })
+    .finally(() => {
+    });
   }
     return (
       <>
@@ -55,7 +57,7 @@ import axios from "axios";
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="firstName" className="block text-sm/6 font-medium text-gray-900">
                  First Name
@@ -64,7 +66,7 @@ import axios from "axios";
                   <input
                     id="firstName"
                     name="firstName"
-                    type="firstName"
+                    type="text"
                     required
                     onChange={handleChange}
                     autoComplete="given-name"
@@ -81,7 +83,7 @@ import axios from "axios";
                   <input
                     id="lastName"
                     name="lastName"
-                    type="lastName"
+                    type="text"
                     required
                     onChange={handleChange}
                     autoComplete="Last Name"
@@ -110,7 +112,7 @@ import axios from "axios";
                   <input
                     id="NIC"
                     name="NIC"
-                    type="NIC"
+                    type="text"
                     required
                     onChange={handleChange}
                     autoComplete="NIC"
@@ -151,7 +153,7 @@ import axios from "axios";
                   <input
                     id="confirmPassword"
                     name="confirmPassword"
-                    type="confirmPassword"
+                    type="password"
                     required
                     onChange={handleChange}
                     autoComplete="current-password"
@@ -165,8 +167,6 @@ import axios from "axios";
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   // onClick={goToLogin}
-                  onClick={handleSubmit}
-
                 >
                   Sign up
                 </button>
