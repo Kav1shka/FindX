@@ -42,7 +42,7 @@ export default function Home() {
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                src="https://cdn1.iconfinder.com/data/icons/crime-and-justice-avatar/512/Agent_Secret_Agent_Special_Agent_Spy-512.png"
                 className="h-8 w-auto"
               />
             </a>
@@ -143,11 +143,10 @@ export default function Home() {
           </div>
           <div className="text-center">
             <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-              Data to enrich your online business
+            FindX
             </h1>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+            Welcome to FindX, where buyers and sellers meet in a seamless and intelligent marketplace powered by multi-agent systems! 
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <button

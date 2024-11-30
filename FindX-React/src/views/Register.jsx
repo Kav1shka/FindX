@@ -30,7 +30,7 @@ import axios from "axios";
       // localStorage.setItem("userId", JSON.stringify(res.data.donorId));
       setTimeout(() => {
         navigate("/user/login");
-      }, 400);
+      }, 500);
     })
     .catch((err) => {
       console.log(err);
@@ -47,7 +47,7 @@ import axios from "axios";
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
               alt="Your Company"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+              src="https://cdn1.iconfinder.com/data/icons/crime-and-justice-avatar/512/Agent_Secret_Agent_Special_Agent_Spy-512.png"
               className="mx-auto h-10 w-auto"
             />
             <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
